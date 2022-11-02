@@ -9,14 +9,21 @@ A Simpler MUI Toast.
 const { toast, setToast } = useContext(ToastContext)
 ```
 
-and Set toaster like this
+and Set toaster using ```seToast```
 
+Example on API Call:
 ```
-setToast({
+fetch(url)
+.then(() => setToast({
+    show: true,
+    type: 'success',
+    message: 'Success!',
+}))
+.catch(err => setToast({
     show: true,
     type: 'error',
-    message: 'Hi There!',
-    })
+    message: err?.message || '',
+    }))
 
 ```
 
