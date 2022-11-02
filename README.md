@@ -9,7 +9,7 @@ A Simpler MUI Toast.
 const { toast, setToast } = useContext(ToastContext)
 ```
 
-and Set like this
+and Set toaster like this
 
 ```
 setToast({
@@ -20,3 +20,4 @@ setToast({
 
 ```
 
+In return method of component, add ```<MUISimpleToast />```
