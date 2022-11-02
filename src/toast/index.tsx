@@ -42,4 +42,4 @@ const MUISimpleToast = (props: ToastProps) => {
   )
 }
 
-export { MUISimpleToast, ToastContext }
+export default MUISimpleToast
