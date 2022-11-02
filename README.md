@@ -6,7 +6,7 @@ A Simpler MUI Toast.
 1. `import { MUISimpleToast, ToastContext } from 'mui-simple-toast'`
 2. In your component, 
 ```
-const { toast, setToast } = useContext(ToastContext)
+const { setToast } = useContext(ToastContext)
 ```
 
 and Set toaster using ```seToast```
