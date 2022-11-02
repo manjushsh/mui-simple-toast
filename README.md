@@ -6,17 +6,25 @@ A Simpler MUI Toast.
 1. `import { MUISimpleToast, ToastContext } from 'mui-simple-toast'`
 2. In your component, 
 ```
-const { toast, setToast } = useContext(ToastContext)
+const { setToast } = useContext(ToastContext)
 ```
 
-and Set like this
+and Set toaster using ```seToast```
 
+Example on API Call:
 ```
-setToast({
+fetch(url)
+.then(() => setToast({
+    show: true,
+    type: 'success',
+    message: 'Success!',
+}))
+.catch(err => setToast({
     show: true,
     type: 'error',
-    message: 'Hi There!',
-    })
+    message: err?.message || '',
+    }))
 
 ```
 
+In return method of component, add ```<MUISimpleToast />```
