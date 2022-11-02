@@ -1,7 +1,6 @@
 {
   "name": "mui-simple-toast",
   "version": "0.1.0",
-  "private": true,
   "author": "manjushsh",
   "license": "MIT",
   "scripts": {
@@ -74,6 +73,8 @@
     "react": ">=16"
   },
   "files": [
-    "build"
+    "build",
+    "LICENSE",
+    "README.md"
   ]
 }

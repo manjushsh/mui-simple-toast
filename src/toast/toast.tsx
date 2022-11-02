@@ -17,23 +17,13 @@ const MUISimpleToast = (props: ToastProps) => {
     variant: 'filled',
   }
 
-  useEffect(() => {
-    setInterval(() => {
-      console.log('Setting Toast...')
-      setToast({
-        show: true,
-        type: 'error',
-        message: 'Hi There!',
-      })
-    }, props?.duration || SNACKBAR_CONFIG.duration)
-  }, [])
-
   return (
     <Snackbar
       open={toast?.show}
       autoHideDuration={props?.duration || SNACKBAR_CONFIG.duration}
       onClose={onToastClose}
       anchorOrigin={SNACKBAR_CONFIG.anchorOrigin}
+      {...props}
     >
       <Alert
         action={
