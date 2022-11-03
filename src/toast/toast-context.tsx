@@ -6,9 +6,6 @@ const ToastContext = createContext({
     type: 'info',
     message: '',
   },
-  setToast: () => {
-    console.log('Ok')
-  },
 } as any)
 
 const ToastProvider = ({ children }: Props) => {
