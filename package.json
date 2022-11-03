@@ -8,7 +8,8 @@
   "private": false,
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc && cp package.json README.md ./dist",
+    "build": "tsc && cp package.json README.md ./dist && npm run build:cjs",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "prepublish": "npm run clean && npm run build"
   },
   "devDependencies": {
@@ -36,7 +37,7 @@
     "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
   },
-  "main": "./dist/esm/index.js",
+  "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "peerDependencies": {
