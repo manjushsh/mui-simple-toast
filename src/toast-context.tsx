@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 // ** React Imports
 import React, { createContext, useState, ReactNode } from 'react'
-const ToastContext = createContext({
+
+const defaultProvider: any = {
   toast: {
     show: false,
     type: 'info',
     message: '',
   },
   setToast: () => {},
-} as any)
+}
+const ToastContext = createContext(defaultProvider)
 
 const ToastProvider = ({ children }: Props) => {
   // ** States

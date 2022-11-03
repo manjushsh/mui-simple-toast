@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Alert, IconButton, Snackbar } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { ToastContext, ToastProvider } from './toast-context'
+import { ToastContext, ToastProvider } from '../toast-context'
 import { ToastProps, ToastConfig } from '../index.d'
 
 const MUISimpleToast = (props: ToastProps) => {
