@@ -1,6 +1,6 @@
 {
   "name": "mui-simple-toast",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A simpler MUI Toast",
   "repository": "https://github.com/manjushsh/mui-simple-toast",
   "author": "manjushsh",
@@ -8,7 +8,8 @@
   "private": false,
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md ./dist"
+    "build": "tsc && cp package.json README.md ./dist",
+    "prepublish": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.5",
@@ -39,7 +40,6 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "peerDependencies": {
-    "@mui/material": "^5.10.12",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   }
