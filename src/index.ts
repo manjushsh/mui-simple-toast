@@ -1,7 +1,8 @@
 import MUISimpleToast from './toast'
-import { ToastContext } from './toast/toast-context'
+import { ToastContext, ToastProvider } from './toast/toast-context'
 
 export default {
   MUISimpleToast,
   ToastContext,
+  ToastProvider,
 }
