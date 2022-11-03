@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 // ** React Imports
 import React, { createContext, useState, ReactNode } from 'react'
 const ToastContext = createContext({
@@ -6,6 +7,7 @@ const ToastContext = createContext({
     type: 'info',
     message: '',
   },
+  setToast: () => {},
 } as any)
 
 const ToastProvider = ({ children }: Props) => {
