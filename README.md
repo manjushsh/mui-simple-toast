@@ -3,13 +3,39 @@ A Simpler MUI Toast.
 
 # How to use?
 
-1. `import { MUISimpleToast, ToastContext } from 'mui-simple-toast'`
-2. In your component, 
+ In your component/Root component(Tou can use React Context API), 
 ```
-const { setToast } = useContext(ToastContext)
+import React, { useEffect, useState } from 'react';
+import MUISimpleToast, { defaultToast } from 'mui-simple-toast/cjs'
+import './App.css';
+
+function App() {
+
+  const  [toast, setToast] = useState(defaultToast)
+
+  useEffect(() => {
+    setInterval(() => {
+        setToast({
+          show: true,
+          type: 'success',
+          message: 'Welcome to Simpler toast!',
+        })
+    }, 3000)
+  }, [])
+
+  return (
+      <div className="App">
+        <h1>Hi There. Can you see some toast?</h1>>
+        <MUISimpleToast toast={toast} setToast={setToast} />
+      </div>
+  );
+}
+
+export default App;
+
 ```
 
-and Set toaster using ```seToast```
+You can set toaster using ```seToast```
 
 Example on API Call:
 ```
