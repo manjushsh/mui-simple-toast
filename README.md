@@ -3,7 +3,26 @@ A Simpler MUI Toast.
 
 # How to use?
 
- In your component/Root component(Tou can use React Context API), 
+You can set toaster using ```seToast```
+
+Example on API Call:
+```
+fetch(url)
+.then(() => setToast({
+    show: true,
+    type: 'success',
+    message: 'Success!',
+}))
+.catch(err => setToast({
+    show: true,
+    type: 'error',
+    message: err?.message || '',
+    }))
+
+```
+
+ ### In your component/Root component, 
+ 
 ```
 import React, { useEffect, useState } from 'react';
 import MUISimpleToast, { defaultToast } from 'mui-simple-toast/cjs'
@@ -35,22 +54,57 @@ export default App;
 
 ```
 
-You can set toaster using ```seToast```
+In return method of component, add ```<MUISimpleToast toast={toast} setToast={setToast} />```
 
-Example on API Call:
-```
-fetch(url)
-.then(() => setToast({
-    show: true,
-    type: 'success',
-    message: 'Success!',
-}))
-.catch(err => setToast({
-    show: true,
-    type: 'error',
-    message: err?.message || '',
-    }))
+
+
+### Or you can use Context API
+
+in index.js
 
 ```
 
-In return method of component, add ```<MUISimpleToast />```
+import React, { createContext, useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import { defaultToast } from 'mui-simple-toast/cjs';
+
+/** Create a Context for Toast Wrapper*/
+export const ToastContext = createContext(defaultToast)
+const ToastProvider = ({ children }: any) => {
+  // ** States
+  const [toast, updateToast] = useState(defaultToast)
+  const setToast = (toastData: any) => updateToast({ ...toast, ...toastData })
+  const values = {
+    toast,
+    setToast,
+  }
+  return <ToastContext.Provider value={values}>{children}</ToastContext.Provider>
+}
+
+root.render(
+  <React.StrictMode>
+    /** Wrap your Root component with Context Provider */
+    <ToastProvider>
+      <App />
+    </ToastProvider>
+  </React.StrictMode>
+);
+
+```
+
+In your App/ Child Component, add
+
+```
+
+const { toast, setToast }: any = useContext(ToastContext)
+
+```
+
+and in return of same component,
+
+```
+<MUISimpleToast toast={toast} setToast={setToast} />
+
+```
