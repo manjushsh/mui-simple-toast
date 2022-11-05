@@ -1,7 +1,9 @@
 import MUISimpleToast from './toast'
-import { ToastContext } from './toast/toast-context'
+import { ToastObject } from './index.d'
 
-export default {
-  MUISimpleToast,
-  ToastContext,
-}
+export default MUISimpleToast
+export const defaultToast: ToastObject = {
+    show: false,
+    type: 'info',
+    message: '',
+};

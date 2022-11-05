@@ -1,12 +1,21 @@
-import { SnackbarOrigin } from '@mui/material'
+import { SnackbarOrigin, AlertProps } from '@mui/material'
 
 export interface ToastProps {
-  variant?: 'standard' | 'filled' | 'outlined'
-  duration?: number
+  variant?: ToastProps['variant']
+  duration?: number;
+  toast: ToastObject;
+  setToast: any;
+  alertProps?: AlertProps;
 }
 
 export interface ToastConfig {
-  anchorOrigin: SnackbarOrigin
+  anchorOrigin?: SnackbarOrigin
   duration?: number
   variant: ToastProps['variant']
+}
+
+export interface ToastObject {
+  show: boolean;
+  type?: AlertProps['severity'];
+  message?: string;
 }
