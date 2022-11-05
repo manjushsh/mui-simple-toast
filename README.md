@@ -1,6 +1,8 @@
 # mui-simple-toast - Simplified toaster/snackbar for MUI
 A Simpler MUI Toast.
 
+# [Demo](https://codesandbox.io/s/mui-simple-toast-g5ei8i?file=/src/index.tsx)
+
 ## If install fails, try running
 `npm i --legacy-peer-deps`
 
