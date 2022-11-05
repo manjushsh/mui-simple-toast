@@ -1,6 +1,6 @@
 {
   "name": "mui-simple-toast",
-  "version": "0.2.18",
+  "version": "0.3.0",
   "description": "A simpler MUI Toast",
   "repository": "https://github.com/manjushsh/mui-simple-toast",
   "author": "manjushsh",
@@ -48,5 +48,12 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
-  "keywords": ["toaster", "mui", "material-toast", "mui-toast","snackbar","react-toast"]
+  "keywords": [
+    "toaster",
+    "mui",
+    "material-toast",
+    "mui-toast",
+    "snackbar",
+    "react-toast"
+  ]
 }
