@@ -1,6 +1,9 @@
 # mui-simple-toast - Simplified toaster/snackbar for MUI
 A Simpler MUI Toast.
 
+## If install fails, try running
+`npm i --legacy-peer-deps`
+
 # How to use?
 
 You can set toaster using ```seToast```
@@ -22,7 +25,7 @@ fetch(url)
 ```
 
  ### In your component/Root component, 
- 
+
 ```
 import React, { useEffect, useState } from 'react';
 import MUISimpleToast, { defaultToast } from 'mui-simple-toast/cjs'
