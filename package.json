@@ -47,5 +47,6 @@
     "@mui/material": "^5.10.12",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
-  }
+  },
+  "keywords": ["toaster", "mui", "material-toast", "mui-toast","snackbar","react-toast"]
 }
