@@ -32,6 +32,7 @@ const MUISimpleToast = (props: ToastProps) => {
           </IconButton>
         }
         variant={props?.variant || SNACKBAR_CONFIG.variant}
+        {...props?.alertProps}
       >
         {toast?.message || ''}
       </Alert>

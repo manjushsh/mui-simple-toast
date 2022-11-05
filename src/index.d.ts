@@ -1,10 +1,11 @@
 import { SnackbarOrigin, AlertProps } from '@mui/material'
 
 export interface ToastProps {
-  variant?: 'standard' | 'filled' | 'outlined'
+  variant?: ToastProps['variant']
   duration?: number;
   toast: ToastObject;
   setToast: any;
+  alertProps?: AlertProps;
 }
 
 export interface ToastConfig {
@@ -15,6 +16,6 @@ export interface ToastConfig {
 
 export interface ToastObject {
   show: boolean;
-  type?: AlertProps['variant'];
+  type?: AlertProps['severity'];
   message?: string;
 }
