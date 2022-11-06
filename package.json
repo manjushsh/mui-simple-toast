@@ -1,20 +1,16 @@
 {
   "name": "mui-simple-toast",
-  "version": "0.2.4",
+  "version": "0.3.1",
   "description": "A simpler MUI Toast",
   "repository": "https://github.com/manjushsh/mui-simple-toast",
   "author": "manjushsh",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
-    "build:esm": "tsc",
+    "clean": "rm -rf dist",
+    "build": "tsc && cp package.json README.md ./dist && npm run build:cjs",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "test": "jest --config jestconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepublish": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@emotion/react": "^11.10.5",
@@ -45,8 +41,19 @@
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "peerDependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
-  }
+  },
+  "keywords": [
+    "toaster",
+    "mui",
+    "material-toast",
+    "mui-toast",
+    "snackbar",
+    "react-toast"
+  ]
 }
