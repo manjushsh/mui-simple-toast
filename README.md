@@ -44,7 +44,7 @@ fetch(url)
 
 ```
 import React, { useEffect, useState } from 'react';
-import MUISimpleToast, { defaultToast } from 'mui-simple-toast/cjs'
+import MUISimpleToast, { defaultToast } from 'mui-simple-toast'
 import './App.css';
 
 function App() {
@@ -86,7 +86,7 @@ import React, { createContext, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { defaultToast } from 'mui-simple-toast/cjs';
+import { defaultToast } from 'mui-simple-toast';
 
 /** Create a Context for Toast Wrapper*/
 export const ToastContext = createContext(defaultToast)
