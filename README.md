@@ -1,5 +1,19 @@
 # mui-simple-toast - Simplified toaster/snackbar for MUI
 A Simpler MUI Toast.
+This reduces code to single line compared to Actual Toast Code from MUI
+```
+<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+  <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+    This is a success message!
+  </Alert>
+</Snackbar>
+```
+
+to
+
+```
+<MUISimpleToast toast={toast} setToast={setToast} />
+```
 
 # [Demo](https://codesandbox.io/s/mui-simple-toast-g5ei8i?file=/src/index.tsx)
 
@@ -30,7 +44,7 @@ fetch(url)
 
 ```
 import React, { useEffect, useState } from 'react';
-import MUISimpleToast, { defaultToast } from 'mui-simple-toast/cjs'
+import MUISimpleToast, { defaultToast } from 'mui-simple-toast'
 import './App.css';
 
 function App() {
@@ -68,12 +82,11 @@ In return method of component, add ```<MUISimpleToast toast={toast} setToast={se
 in index.js
 
 ```
-
 import React, { createContext, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import { defaultToast } from 'mui-simple-toast/cjs';
+import { defaultToast } from 'mui-simple-toast';
 
 /** Create a Context for Toast Wrapper*/
 export const ToastContext = createContext(defaultToast)
@@ -102,7 +115,6 @@ root.render(
 In your App/ Child Component, add
 
 ```
-
 const { toast, setToast }: any = useContext(ToastContext)
 
 ```
