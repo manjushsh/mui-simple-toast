@@ -1,0 +1,5 @@
+run following:
+yarn to install and build
+npm login - open browser and login to npm
+npm version patch - update version (major | minor | patch etc)
+npm publish ./dist - publish to npm (npm publish ./dist --dry-run to test)
